@@ -1,0 +1,212 @@
+@import "nullstyle.scss";
+
+html,
+body {
+	height: 100%;
+}
+
+.wrapper {
+	display: flex;
+	min-height: 100%;
+	overflow: hidden;
+	flex-direction: column;
+	font-family: Courier , monospace;
+}
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 0px 25px;
+}
+
+/*========================================= HEADER =========================================*/
+
+.header {
+
+	padding-top: calc(40px + (10 - 40) * ((1960px - 100vw) / (1960 - 320)));
+	padding-bottom: calc(40px + (10 - 40) * ((1960px - 100vw) / (1960 - 320)));
+
+	&__container {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		column-gap: calc(25px + (15 - 25) * ((1960px - 100vw) / (1960 - 320)));
+	}
+
+	&__logo {
+		flex: 0 1 auto;
+		img {
+			width: calc(72px + (44 - 72) * ((1960px - 100vw) / (1960 - 320)));
+			width: calc(72px + (44 - 72) * ((1960px - 100vw) / (1960 - 320)));
+		} 
+	}
+
+	&__logotext {
+		flex: 2 1 auto;
+	}
+
+	&__search {
+		input{
+			$SearchWidth: 250px;
+
+			width: $SearchWidth;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 12px;
+			padding: 12px 20px 12px 42px;
+			flex: 1 1 auto;
+			transition: width 0.3s ease 0s;
+			font-size: calc(18px + (14 - 18) * ((1960px - 100vw) / (1960 - 320)));
+			&:focus{
+				width: ($SearchWidth * 1.2);
+				border: 2px solid rgba(0,0,0,0.2);
+				&::placeholder{
+					color: transparent;
+				}
+			}
+		}
+	}
+
+	&__cart {
+		flex: 0 1 auto;
+	} 
+}
+
+.logotext {
+	&__title {
+		text-transform: uppercase;
+		font-size: calc(30px + (20 - 30) * ((1960px - 100vw) / (1960 - 320)));
+		font-weight: 800;
+		line-height: 36px;
+	}
+
+	&__subtitle {
+		font-size: calc(22px + (16 - 22) * ((1960px - 100vw) / (1960 - 320)));
+		color: #7b7b7b;
+	}
+}
+
+.cart-header {
+	background-color: #fa7f14;
+	color: white;
+	padding: calc(16px + (8 - 16) * ((1960px - 100vw) / (1960 - 320)));
+	display: flex;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 30px;
+
+	font-size: calc(18px + (14 - 18) * ((1960px - 100vw) / (1960 - 320)));
+	font-weight: 800;
+
+	cursor: pointer;
+	text-align: center;
+   transition: background-color .15s ease-in-out,border-color .15s ease-in-out;
+
+	&:hover{
+		background-color: #e3710d;
+	}
+
+	&__delimetr {
+		width: 1px;
+		height: calc(22px + (14 - 22) * ((1960px - 100vw) / (1960 - 320)));
+		background-color: #ffffff;
+		margin: 0px 10px;
+	}
+
+	&__products {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+}
+
+/*========================================= HEADER =========================================*/
+
+/*========================================= MAIN =========================================*/
+
+.main {
+	flex: 1 1 auto;
+}
+.content {
+		&__top {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+		}
+}
+
+.categories {
+	ul{
+		font-size: calc(20px + (12 - 20) * ((1960px - 100vw) / (1960 - 320)));
+		color: #232323;
+		column-gap: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: calc(20px + (12 - 20) * ((1960px - 100vw) / (1960 - 320)));
+		li{
+			padding-top: calc(15px + (10 - 15) * ((1960px - 100vw) / (1960 - 320)));
+			padding-bottom: calc(15px + (10 - 15) * ((1960px - 100vw) / (1960 - 320)));
+			padding-left: calc(10px + (5 - 10) * ((1960px - 100vw) / (1960 - 320)));
+			padding-right: calc(10px + (5 - 10) * ((1960px - 100vw) / (1960 - 320)));
+			background-color: #e8e8e8;
+    		border-radius: 30px;
+    		cursor: pointer;
+    		font-weight: 700;
+
+			&.active {
+    			background-color: #11111f;
+    			color: #fff;
+			}
+		}
+	}
+}
+
+
+
+.sort {
+		&__label {
+    		display: flex;
+			align-items: center;
+    		font-size: calc(22px + (12 - 22) * ((1960px - 100vw) / (1960 - 320)));
+			font-weight: 800;
+			justify-content: end;
+			b{
+				margin-right: 8px;
+			}
+			span{
+				border-bottom: 1px dashed #fa7f14;
+				color: #fa7f14;
+				cursor: pointer;
+			}
+		}
+		&__popup{
+			background: #fff;
+    		border-radius: 10px;
+    		box-shadow: 0 5px 15px rgba(0,0,0,.09);
+    		margin-top: 15px;
+    		padding: 10px 0;
+			position: absolute;
+			right: 130px;
+				border-width: 2px;
+				border-style: outset;
+				border-color: buttonborder;
+				border-image: initial;
+			ul{
+				overflow: hidden;
+				li{
+					cursor: pointer;
+					padding: 12px 20px;
+					&:hover{
+						background: rgba(254,95,30,.05);
+					}
+					&.active{
+						color: #fa7f14;
+						font-weight: 700;
+						background: rgba(254,95,30,.05);
+					}
+				}
+			}
+		}
+}
+
+/*========================================= MAIN =========================================*/
